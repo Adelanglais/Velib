@@ -5,13 +5,13 @@ import folium
 ref_latitude = 0.0008764
 ref_longitude = 0.000433
 
-#print('Veuillez renseigner votre adresse au format suivant: numéro, rue, CP ville')
-#adresse = input()
+print('Veuillez renseigner votre adresse au format suivant: numéro, rue, CP ville')
+adresse = input()
 
 """ Gestion de l'adresse courante -- Retourne ses coordonnées """
 
 api_geoloc_url = "https://api-adresse.data.gouv.fr/search/?q="
-adresse = "24, boulevard de l'Hopital, 75005 Paris"
+#adresse = "24, boulevard de l'Hopital, 75005 Paris"
 r = requests.get(api_geoloc_url + urllib.parse.quote(adresse))
     
 data_location = json.loads(r.text) #conversion de l'objet JSON retourné en un dictionnaire python
